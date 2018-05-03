@@ -1,0 +1,397 @@
+/* CSS Document */
+
+
+<style type="text/css" media="all">
+* {
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	box-sizing: border-box;
+}
+
+html {
+	-ms-touch-action: none;
+	margin: 0 0;padding: 0 0;
+    width:100%;height:100%;
+}
+
+body,ul,li {
+	padding: 0;
+	margin: 0;
+	border: 0;
+}
+
+body {
+	font-size: 12px;
+	font-family: ubuntu, helvetica, arial;
+  width:100%;height:100%;
+}
+
+li{
+  width: 100%;
+}
+
+td{font-size:15px;color:#007EE5;font-weight: 100;width:14.28%;min-width: 10px;}
+th{text-align: center;font-size:14px;height:30px;}
+table,td,th{border:0px}
+table{width:90%;}
+
+.reddot{color:#fff;background:red;}
+
+.pullDownLabel{
+	text-align: center;
+}
+
+.topcontentup{
+	top:-20px;
+	/*调用animation属性，从而让按钮在载入页面时就具有动画效果*/
+    -webkit-animation-name: "topheight"; /*动画名称，需要跟@keyframes定义的名称一致*/
+    -webkit-animation-duration: 0.5s;/*动画持续的时间长*/
+    -webkit-animation-iteration-count: 1;/*动画循环播放的次数*/
+} 
+@-webkit-keyframes 'topheight' {
+     from {
+       top: 0px;
+     }
+   to {
+     top:-20px;
+    }
+  }
+.fullwidth .expand{
+	width:100%;
+	height:1px;
+	margin:2px 0;
+	background:#2187e7;
+	position:absolute;
+	box-shadow:0px 0px 10px 1px rgba(0,198,255,0.7);
+    -moz-animation:fullexpand 10s ease-out;
+	-webkit-animation:fullexpand 10s ease-out;
+}
+.f15{font-size:15px;}
+.weeked{color:#ccc}  
+.today{text-decoration: underline;}
+.signday{color:#000}
+.noneday{color:#000}
+
+@font-face {font-family: 'iconfont';
+    src: url('/list/fonts/iconfont.eot'); /* IE9*/
+    src: url('/list/fonts/iconfont.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+    url('/list/fonts/iconfont.woff') format('woff'), /* chrome、firefox */
+    url('/list/fonts/iconfont.ttf') format('truetype'), /* chrome、firefox、opera、Safari, Android, iOS 4.2+*/
+    url('/list/fonts/iconfont.svg#iconfont') format('svg'); /* iOS 4.1- */
+}
+
+.un-signday{
+	color: red;
+	font-family:"iconfont";
+	font-size:30px;font-style:normal;
+}
+
+.sign-tab-head{
+	color:#FFF;
+	background: #007EE5;
+}
+
+.sign-tab-head td{
+	color:#FFF;
+}
+
+.weekend{
+	color: #ccc;
+}
+.mintitle{
+	padding-top:18px;
+	padding-bottom:10px;
+}
+	
+.fc{	
+	font-size:18px;
+	font-family:"宋体";
+	/*font-weight:bold;*/
+	color:#FFF;	
+	font-weight: 100;
+	}
+#btnLoadPreviousCalendar,#btnLoadNextCalendar{
+	display:none;
+}
+
+.attendanceDateDiv{
+	text-align: center;
+	width: 50%;
+	float: left;
+}
+
+.attendanceDateDiv span{
+	margin-left:5px;
+	font-size: 18px;
+	font-weight: bold;	
+}
+.attendanceDateDiv p{	
+	font-size:15px;
+}
+.progress {
+	height: 10px;
+	margin-top: 3px;
+	overflow: hidden;
+	/*background-color: #f5f5f5;
+	border-radius: 4px;*/
+	background-color:#FC333D;
+	border: 1px solid #337ab7;
+	-webkit-box-shadow: inset 0 1px 2px rgba(0,0,0,.1);
+	box-shadow: inset 0 1px 2px rgba(0,0,0,.1);
+}
+.progress-bar {
+	float: left;
+	width: 0;
+	height: 99%;
+	font-size: 12px;
+	line-height: 10px;
+	color: #fff;
+	text-align: center;
+	background-color: #337ab7;
+	-webkit-box-shadow: inset 0 -1px 0 rgba(0,0,0,.15);
+	box-shadow: inset 0 -1px 0 rgba(0,0,0,.15);
+	-webkit-transition: width .6s ease;
+	-o-transition: width .6s ease;
+	transition: width .6s ease;
+}
+
+.container-fluid .form-group label{
+	float:left;
+}
+.container-fluid {
+	float: left;width:100%;
+}
+
+.sr-only {
+	position: absolute;
+	width: 1px;
+	height: 1px;
+	padding: 0;
+	margin: -1px;
+	overflow: hidden;
+	clip: rect(0,0,0,0);
+	border: 0;
+}
+/*loading*/
+.iconwrapload{    
+    width: 20px;
+    height: 20px;
+    opacity: 0.8;
+    position: relative;
+    z-index: 999;
+    -webkit-border-radius: 10%;
+    display: inline-block;
+    margin-top: 6px;
+    vertical-align: -3px;
+    margin-right: 3px;
+}
+.iconspinner{
+	height: 70%;
+	width: 50%;
+}   
+.spinnertops{
+    height: 3px;
+}
+.iconspinner div{
+    background-color: #000;
+}
+.startred,.endred{
+  background: #ff0000;
+}
+
+ul li{
+  
+  width: 100%;
+  
+}
+@-webkit-keyframes fadeInUp {
+  0% {
+    opacity: 0;
+    -webkit-transform: translate3d(0, 100%, 0);
+    transform: translate3d(0, 100%, 0);
+  }
+
+  100% {
+    opacity: 1;
+    -webkit-transform: none;
+    transform: none;
+  }
+}
+.fadeInUp {
+  -webkit-animation-duration: 1s;
+  -webkit-animation-name: fadeInUp;
+}
+
+/*已选中的日期样式*/
+ .fixed-wh{/*td 固定 宽高 */
+	 width:14.28%;
+	 height:35px;
+	 min-width:35px;
+}
+
+ .fixed-wh div span{
+	 font-size:16px;
+}
+
+.x-date-selected{
+	height:28px;
+	width:28px;
+	min-width:28px;
+	max-width:28px;
+	line-height:28px;
+	border-radius:24px;	
+	color: #fff;
+}
+
+/* 选中日详情 */
+.half-or-all-day-tab{
+	background-color:#eeeeee;
+	border-top:0px solid #dfdfdf;
+	border-radius: 5px;
+}
+
+.lab-cur-select-day{
+	font-size:23px;
+	color:gray;
+	font-family:"微软雅黑";
+	font-weight:bold;
+}
+
+.day-detail-cur-selected{
+	width:45%;
+	padding-left:10%;
+	text-align:left
+}
+
+.all{
+	/*background-color: #f37e1e;
+	border:0px solid #f37e1e;*/
+	background-color: #007EE5;
+	border:0px solid #007EE5;
+	color:#FFF;
+}
+
+/*上午*/
+.am{
+	background-color:#58c1fa;
+	border:0px solid #42a3e4;
+	color:#FFF;
+}
+
+/*下午*/
+.pm{
+	background-color:#4c4f9e;
+	border:0px solid #292e9f;	
+	color:#FFF;
+}
+
+.unselected{
+	background-color:#eeeeee;
+	border:0px solid #e5e5e5;
+	color:#000;
+}
+
+.day-detail{
+	border-radius: 24px;
+	height:24px;
+	width:50px;
+	min-width:50px;
+	max-width:50px;
+	line-height:24px;
+	font-size:12px;
+}
+
+/*上一个月份*/
+.x-date-left{
+	padding-left: 8px;
+}
+
+.x-date-left a{
+	display: block;
+	border-radius: 100%;
+	width: 40px;
+	height: 40px;
+	background:#ccc;
+}
+.x-date-left a i{
+	color: red;
+	font-family:"iconfont";
+	font-size:30px;font-style:normal;
+}
+.x-date-right a i{
+	color: red;
+	font-family:"iconfont";
+	font-size:30px;font-style:normal;
+}
+
+/*下一个月份*/
+.x-date-right{
+	padding-right: 8px;
+}
+
+.x-date-right a{
+	display: block;
+	border-radius: 100%;
+	width: 40px;
+	height: 40px;
+	background:#ccc;
+	margin-top:14px;
+}
+
+/* 按钮组 */
+.btnTable{
+	color:#ee4d1f;
+	font-size:12px;
+	font-family:"微软雅黑";
+}
+
+.btnTable-cancel{
+	text-align:left;
+	padding-left:8%;
+}
+
+.btnTable-sure{
+	text-align:right;
+	padding-right:8%;
+}
+
+#calendarDiv table{
+	background-color: #f0f2f5;
+	width:100%;
+}
+
+/* 日历Div 移动动画 */
+#calendarDiv{
+	position:relative;
+	animation:moveAnimation 1s;
+	-moz-animation:moveAnimation 1s; /* Firefox */
+	-webkit-animation:moveAnimation 1s; /* Safari and Chrome */
+	-o-animation:moveAnimation 1s; /* Opera */
+}
+
+@keyframes moveAnimation
+{
+	0%   {left:0px; top:500px;}
+	100% {left:0px; top:0px;}
+}
+
+@-moz-keyframes moveAnimation /* Firefox */
+{
+	0%   {left:0px; top:500px;}
+	100% {left:0px; top:0px;}
+}
+
+@-webkit-keyframes moveAnimation /* Safari and Chrome */
+{
+	0%   {left:0px; top:500px;}
+	100% {left:0px; top:0px;}
+}
+
+@-o-keyframes moveAnimation /* Opera */
+{
+	0%   {left:0px; top:500px;}
+	100% {left:0px; top:0px;}
+}
+
+.bgColor_12{background-color:#8ac3e9}
+</style>
